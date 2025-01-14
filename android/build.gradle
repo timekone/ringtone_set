@@ -30,6 +30,10 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+
+    if (project.android.hasProperty("namespace")) {
+        namespace("acr.rt.ringtone_set")
+    }
 }
 dependencies {
     implementation 'androidx.annotation:annotation:1.2.0'
