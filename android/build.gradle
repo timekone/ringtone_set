@@ -2,7 +2,7 @@ group 'acr.rt.ringtone_set'
 version '1.0'
 
 buildscript {
-   repositories {
+    repositories {
         google()
         mavenCentral()
     }
@@ -13,7 +13,7 @@ buildscript {
 }
 
 rootProject.allprojects {
-     repositories {
+    repositories {
         google()
         mavenCentral()
     }
@@ -22,9 +22,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    if (project.android.hasProperty("namespace")) {
-        namespace("acr.rt.ringtone_set")
-    }
+    namespace "acr.rt.ringtone_set" // The namespace is defined explicitly
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
@@ -36,14 +34,12 @@ android {
     defaultConfig {
         minSdkVersion 21
     }
+
     lintOptions {
         disable 'InvalidPackage'
     }
-
-    if (project.android.hasProperty("namespace")) {
-        namespace("acr.rt.ringtone_set")
-    }
 }
+
 dependencies {
     implementation 'androidx.annotation:annotation:1.2.0'
 }
