@@ -26,22 +26,13 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /**
  * RingtoneSetPlugin
  */
 public class RingtoneSetPlugin implements FlutterPlugin, MethodCallHandler {
-    private static RingtoneSetPlugin instance;
     private MethodChannel channel;
     private Context mContext;
-
-    public static void registerWith(Registrar registrar) {
-        if (instance == null) {
-            instance = new RingtoneSetPlugin();
-        }
-        instance.onAttachedToEngine(registrar.context(), registrar.messenger());
-    }
 
     @Override
     public void onAttachedToEngine(FlutterPluginBinding binding) {
